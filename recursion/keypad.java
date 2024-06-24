@@ -10,7 +10,7 @@ public class keypad {
             return;
         }
         char currChar = str.charAt(idx);
-        String mapping = keypad[currChar - '0'];// indx of elements in keypad array
+        String mapping = keypad[currChar - '0'];
         for (int i = 0; i < mapping.length(); i++) {
             printComb(str, idx + 1, combination + mapping.charAt(i));
         }
