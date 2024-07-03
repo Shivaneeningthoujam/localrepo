@@ -44,7 +44,7 @@ public class quicksort {
         quick(arr, 0, 6);
         System.out.println("After quick sorting:");
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.print(arr[i] + " e");
         }
     }
 }
