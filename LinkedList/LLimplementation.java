@@ -1,10 +1,5 @@
 package localrepo.LinkedList;
 
-import java.util.*;
-
-/**
- * LLimplementation
- */
 public class LLimplementation {
     Node head;
 
@@ -85,6 +80,22 @@ public class LLimplementation {
             currNode = currNode.next;
         }
         System.out.println("null");
+    }
+
+    // Deleting a node if only the reference or the pointer to the node to be
+    // deleted is given
+    public void deleteNode(Node Node_ptr) {
+        // temp holds reference to the node that comes after 'Node_ptr'(the node to be
+        // deleted )
+        Node temp = Node_ptr.next;
+        // Data of next node is copied to the current node(Node_ptr)
+        // This makes the current node effectively a duplicate of the next node
+        Node_ptr.data = temp.data;
+        Node_ptr.next = temp.next;
+        // The above line removes the temp
+        temp = null;
+        // for garbage collection
+
     }
 
     public static void main(String[] args) {
