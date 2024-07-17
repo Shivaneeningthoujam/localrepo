@@ -47,8 +47,8 @@ public class rabinKarp {
     }
 
     public static void main(String[] args) {
-        String pat = "ab";
-        String txt = "abcdabbab";
+        // String pat = "ab";
+        // String txt = "abcdabbab";
 
     }
 }

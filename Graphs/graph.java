@@ -80,6 +80,23 @@ public class graph {
         }
     }
 
+    // Detecting any loop in a given directed graph
+    public static boolean isCycle(ArrayList<Edge> graph[], boolean vis[], int curr, boolean rec[]) {
+        vis[curr] = true;
+        rec[curr] = true;
+        for (int i = 0; i < graph[curr].size(); i++) {
+            Edge e = graph[curr].get(i);
+            if (rec[e.dest]) {
+                // Cycle exits
+                return true;
+            } else if (!vis[e.dest]) {
+                isCycle(graph, vis, e.dest, rec);
+            }
+        }
+        rec[curr] = false;
+        return false;
+    }
+
     public static void main(String[] args) {
         int V = 7;
         ArrayList<Edge> graph[] = new ArrayList[V];
