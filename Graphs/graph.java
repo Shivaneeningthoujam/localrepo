@@ -96,7 +96,47 @@ public class graph {
         rec[curr] = false;
         return false;
     }
-
+    //Detecting cycle in undirected graph
+    public static boolean isCycleU(ArrayList<Edge> graph[],boolean vis[],int curr,int par){
+        //par denotes parent node
+        vis[curr]=true;//First set the current node as visited
+        for(int i=0;i<graph[curr].size();i++){//finds the neighbours of the current node
+            Edge e=graph[curr].get(i);
+            if((vis[e.dest]&&e.dest!=par)==true){//if the neighbour is already visited but it's not its parent node
+               return true;//=>Cycle exists
+            }
+            else if(!vis[e.dest]){//if the node isn't visited yet
+                if(isCycleU(graph, vis, e.dest, curr))//call the function recursively to visit the node
+                return true;//if cycle detected ,return true
+            }
+        }
+        return false;//if allthe above conditions isn't met
+    }
+    //TOPOLOGICAL SORTING
+    //It is used only for directed Acyclic graphs only
+    //We r using stack to implement the algo
+    //the output should be nodes with lesser in-degrees first
+    public static void topSortUtil(ArrayList<Edge> graph[],int curr,boolean vis[],Stack<Integer> s){
+        vis[curr]=true;
+        for(int i=0;i<graph[curr].size();i++){
+            Edge e=graph[curr].get(i);
+            if(!vis[e.dest]){
+                topSortUtil(graph, e.dest, vis, s);
+            }
+        } s.push(curr);
+    }
+    public static void topSort(ArrayList<Edge> graph[],int V){
+        boolean vis[]=new boolean[V];
+        Stack<Integer> s=new Stack<>();
+        for(int i=0;i<V;i++){
+            if(!vis[i]){
+                topSortUtil(graph, i, vis, s);
+            }
+        }
+        while(!s.isEmpty()){
+            System.out.println(s.pop()+" ");
+        }
+    }
     public static void main(String[] args) {
         int V = 7;
         ArrayList<Edge> graph[] = new ArrayList[V];
