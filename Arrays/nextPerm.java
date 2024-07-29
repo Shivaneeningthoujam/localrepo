@@ -1,7 +1,7 @@
 package localrepo.Arrays;
 
 public class nextPerm {
-    public void nextPerm(int[] arr) {
+    public static void nextPerm(int[] arr) {
         int ind1 = -1, ind2 = -1;
         // 1.Find the breaking point
         // BREAKING POINT:Traverse the array from right to left to find the 1st element
@@ -20,7 +20,7 @@ public class nextPerm {
             // find next greater element and swap with ind2
             for (int i = arr.length - 1; i >= 0; i--) {
                 if (arr[i] > arr[ind1]) {
-                    ind2 = i;
+                    ind2 = i;// assuming that the 2nd part of the array is in descending order
                     break;
                 }
             }
@@ -30,13 +30,13 @@ public class nextPerm {
         }
     }
 
-    public void swap(int[] arr, int i, int j) {
+    public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    void reverse(int[] arr, int start) {
+    static void reverse(int[] arr, int start) {
         int i = start;
         int j = arr.length - 1;
         while (i < j) {
@@ -47,7 +47,11 @@ public class nextPerm {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 3, 2, 1 };
+        int[] arr = { 2, 3, 2, 1, 0, 0 };
+        nextPerm(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
 
     }
 }

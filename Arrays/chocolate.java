@@ -13,33 +13,29 @@ public class chocolate {
     // chocolates and the packet with minimum chocolates given to the students is
     // minimum.
     public static int chocoDist(int[] arr, int m) {
-        // Check for base case
-        if (arr.length == 0 || m == 0) {
+        // Check for base case:if the length of the array or m is 0,return 0
+        if (arr.length == 0 || m == 0)
             return 0;
-        }
-        // 1.Sort the given array
+        // Sort the array
         Arrays.sort(arr);
-        // 2.Check if there are enough packets for the given window size
-        if (arr.length - 1 < m) {
+        // see if there are enough m packets in the array
+        if (arr.length - 1 < m)
             return -1;
-        }
-        // 3.Initialise minimum difference to max integeer possible
-        int min_diff = Integer.MAX_VALUE;
-        // In Java, Integer.MAX_VALUE is a constant that holds the maximum value an int
-        // can have. This value is 2,147,483,647 (or 2^31 - 1).
+
+        // initialise the minimum value
+        int min_diff = Integer.MIN_VALUE;
+
+        // iterate throught the array to find the subsets
         for (int i = 0; i < arr.length; i++) {
-            // Calculate the ending index of the current window
-            int nextWindow = i + m - 1;
-            // Break if the window goes beyond the bounds of the array
-            if (nextWindow >= arr.length)
+            int windowEnd = i + m - 1;// m is given which is the number of packets to be distributed
+            // break if the window goes beyond the bounds
+            if (windowEnd >= arr.length)
                 break;
-            // Calculate the difference between the last and the first elements in the
-            // window
-            int diff = arr[nextWindow] - arr[i];
-            // Update the min diff if found
+            // calculate the difference between the first and last element of the window
+            int diff = arr[windowEnd] - arr[i];
+            // select the minimum difference to return
             min_diff = Math.min(min_diff, diff);
         }
-        // Return the calculated min diff
         return min_diff;
     }
 
