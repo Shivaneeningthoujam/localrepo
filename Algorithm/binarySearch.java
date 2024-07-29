@@ -10,9 +10,9 @@ public class binarySearch {
      * 2. find mid = start + (end - start) / 2
      * 3. compare target and mid element
      */
-    public static int search(int arr[], int target) {
-        int start = 0;
-        int end = arr.length - 1;
+    public static int search(int arr[], int target, int start, int end) {
+        start = 0;
+        end = arr.length - 1;
 
         while (start <= end) {
             int mid = start + (end - start) / 2;
@@ -31,7 +31,7 @@ public class binarySearch {
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4, 5, 6 };
         int target = 5;
-        int result = search(arr, target);
+        int result = search(arr, target, 0, 5);
         System.out.println("result: " + result);
     }
 }
