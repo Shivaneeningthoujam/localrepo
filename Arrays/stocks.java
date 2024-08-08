@@ -11,13 +11,17 @@ public class stocks {
     public int maxProfit(int[] prices) {
         // We have to return the max profit which is difference between
         // prices of day of sell and bought
+        // We are using Kadane's algorithm:It is the algorithm to find the max sum of a
+        // continous sub arrays
         int maxProfit = 0;
-        int minSofar = prices[0];
+        int minSoFar = prices[0];
+        // for loop to find profit
         for (int i = 0; i < prices.length; i++) {
-            minSofar = Math.min(minSofar, prices[i]);
-            int profit = prices[i] - minSofar;
+            minSoFar = Math.min(minSoFar, prices[i]);
+            int profit = prices[i] - minSoFar;
             maxProfit = Math.max(maxProfit, profit);
         }
         return maxProfit;
     }
+
 }

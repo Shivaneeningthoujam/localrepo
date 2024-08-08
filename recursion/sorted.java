@@ -7,7 +7,7 @@ public class sorted {
         if (idx == arr.length - 1)
             return true;
 
-        return arr[idx] < arr[idx + 1] && isSorted(arr, idx + 1);
+        return arr[idx] > arr[idx + 1] && isSorted(arr, idx + 1);
     }
 
     public static void main(String[] args) {
