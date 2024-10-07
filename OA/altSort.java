@@ -1,4 +1,3 @@
-package localrepo.OA;
 
 //given an unsorted array.Sort it .Return alternate result
 //i/p:4 3 2 5 7

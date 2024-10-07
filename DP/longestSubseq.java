@@ -15,6 +15,7 @@ public class longestSubseq {
         return lcsUtil(m, n, a, b, dp);
     }
 
+    // top down approach
     private static int lcsUtil(int m, int n, String a, String b, int[][] dp) {
         // Base case:
         if (m == 0 || n == 0)

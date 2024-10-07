@@ -1,0 +1,10 @@
+Good evening Sir,
+I am Shivanee Ningthoujam from NIT Manipur .I am currently pursuing Btech in CSE.
+To start with my skills,I have fairly good foundation in java ,data structure and algorithm and web development. 
+I've worked in several projects like complain management system,spotify clone and other small projects.
+Talking about my experience , I've completed my internship at BEL  where I gained a hands-on experience in
+react js and was able to development a complain management website . In the project, the user is able to complain about 
+the issues related to workspace and the admin is able to manage and resolve the issues in his own admin page.
+I'm particularly interestd in frontend webdevelopment.I've completed my coursework in the domain.
+I believe my skills align well with the requirements of this role and I'm eager to apply them in real-world challenges.
+Thank you for the opportunity.

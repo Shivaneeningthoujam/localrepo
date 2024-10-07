@@ -7,11 +7,14 @@ package localrepo.Algorithm;
 * 3.Median
 * 4.Random no.
 */
-//Then we perform partition bsed on the selected pivot.If an element is > pivot-->element comes after
-//the pivot else before the pivot
+//Then we perform partition bsed on the selected pivot.If an element is > pivot
+//-->element comes after the pivot else before the pivot
 public class quicksort {
     public static void quick(int arr[], int low, int high) {
         if (low < high) {
+            // we take two pointers low and high
+            // low=0 starting index of the subarray
+            // high=n-1 ending index of the subarray
             int pidx = partition(arr, low, high);// getting the pivot index
             quick(arr, low, pidx - 1);
             quick(arr, pidx + 1, high);
@@ -44,7 +47,7 @@ public class quicksort {
         quick(arr, 0, 6);
         System.out.println("After quick sorting:");
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " e");
+            System.out.print(arr[i] + " ");
         }
     }
 }
